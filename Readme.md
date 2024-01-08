@@ -16,7 +16,7 @@
 1. Retrieved encryption key for activation key decryption 
 2. Retrieved pattern of content of activation key: `---Days:(\d+) --- Y:(\d+) --- M:(\d+) --- D:(\d+) --- Machine:(.+)`
 
-Result: success. Based on analysis keygen was written.
+Result: success. Based on analysis keygen was written. Original was not changed.
 
 ### Aggressive codebase change ❌
 
