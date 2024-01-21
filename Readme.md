@@ -2,25 +2,25 @@
 
 ## Analysis history
 
-1. Original is `LootScanner.dll`
-2. Two different obfuscators was applied (already was hacked)?
-3. Was found certificate pinning method which always returns true and doesn't called to somewhere (hacked before?)
-4. Current license handling is: Duration of key + machine id + AES
-5. Applied anti-tamper. In case change of code it will crash silently
-6. Good obfuscator was applied. Automated tools failed to deobfuscate.
+1. The original is `LootScanner.dll`
+2. Two different obfuscators were applied (already hacked?).
+3. A certificate pinning method was found that always returns true and isn't called anywhere (previously hacked?).
+4. Current license handling includes: Duration of key + machine ID + AES.
+5. Anti-tamper applied. If code changes, it will crash silently.
+6. A robust obfuscator was used. Automated tools failed to deobfuscate.
 
-## Reverse history
+## Reverse Engineering History
 
 ### Manual analysis with debugging ✅
 
-1. Retrieved encryption key for activation key decryption 
-2. Retrieved pattern of content of activation key: `---Days:(\d+) --- Y:(\d+) --- M:(\d+) --- D:(\d+) --- Machine:(.+)`
+1. Retrieved the encryption key for activation key decryption.
+2. Retrieved the pattern of the content of the activation key: `---Days:(\d+) --- Y:(\d+) --- M:(\d+) --- D:(\d+) --- Machine:(.+)`
 
-Result: success. Based on analysis keygen was written. Original was not changed.
+Result: Successful. Based on the analysis, a keygen was written. The original was not altered.
 
 ### Aggressive codebase change ❌
 
-1. Change method `GetCryptoToken` to always return same string
-2. Change field `CryptoTokenValid` to always return same string
+1. Changed the method `GetCryptoToken` to always return the same string
+2. Changed the field `CryptoTokenValid` to always return the same string
 
-Result: failed. Unable to found anti tamper. Application crashes silently. I think stack overflow exception being raised.
+Result: Failed. Unable to locate anti-tamper. The application crashes silently; I suspect a stack overflow exception is being raised.
