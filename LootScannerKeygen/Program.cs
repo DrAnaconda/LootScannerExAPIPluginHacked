@@ -16,7 +16,7 @@ while (true)
     }
     catch (Exception e)
     {
-        Console.Write($"Suka dolbaeb print like a human not like dalbaeb: {e.Message}");
+        Console.Write($"Are you serious? Print an number, please: {e.Message}");
     }
 }
 
